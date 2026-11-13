@@ -1,0 +1,402 @@
+/* ==========================================================================
+   FITPLAN: WEB-BASED WORKOUT PLANNER AND TRACKER
+   File: style.css (100% Standard CSS for Visual Studio Code — Zero Warnings)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #c8f153;
+  background-image: radial-gradient(circle at 20% 20%, #d4f76e 0%, #bce843 100%);
+  color: #111827;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Keyframe Animations */
+@keyframes pageFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes waveDraw {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes barGrowWidth {
+  0% {
+    width: 0%;
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+/* Clean White Card Style (No Neon Glow) */
+.clean-card {
+  background-color: #ffffff;
+  border: 1px solid #eef0f4;
+  border-radius: 20px;
+  box-shadow: 0 6px 24px rgba(17, 24, 39, 0.04);
+  animation: pageFadeSlideUp 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease;
+}
+
+.clean-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(17, 24, 39, 0.08);
+}
+
+.animate-page-enter {
+  animation: pageFadeSlideUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-modal-pop {
+  animation: modalPopIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-backdrop-fade {
+  animation: backdropFadeIn 0.22s ease-out both;
+}
+
+.animate-float-slow {
+  animation: floatSlow 3.6s ease-in-out infinite;
+}
+
+.animate-wave-line {
+  stroke-dasharray: 600;
+  animation: waveDraw 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bar-grow {
+  animation: barGrowWidth 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2.2s ease-in-out infinite;
+}
+
+/* Primary Lime Action Button */
+.lime-btn {
+  background-color: #c5f04c;
+  color: #111827;
+  transition: background-color 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
+}
+
+.lime-btn:hover {
+  background-color: #b5e438;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.12);
+}
+
+.lime-btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Secondary Matte-Dark Action Button */
+.dark-btn {
+  background-color: #111827;
+  color: #ffffff;
+  transition: background-color 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease;
+}
+
+.dark-btn:hover {
+  background-color: #1f2937;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(17, 24, 39, 0.16);
+}
+
+.dark-btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Exercise Guide Animations */
+@keyframes barPress {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-22px);
+  }
+}
+
+@keyframes squatBody {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes pullDownBar {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(24px);
+  }
+}
+
+@keyframes pushUpBody {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-8deg) translateY(10px);
+  }
+}
+
+@keyframes corePulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes flyArms {
+  0%,
+  100% {
+    transform: scaleX(1.18);
+  }
+  50% {
+    transform: scaleX(0.72);
+  }
+}
+
+.animate-bar-press {
+  animation: barPress 1.8s ease-in-out infinite;
+}
+
+.animate-squat-body {
+  animation: squatBody 2s ease-in-out infinite;
+}
+
+.animate-pulldown {
+  animation: pullDownBar 1.9s ease-in-out infinite;
+}
+
+.animate-pushup {
+  animation: pushUpBody 1.7s ease-in-out infinite;
+  transform-origin: 185px 128px;
+}
+
+.animate-core-pulse {
+  animation: corePulse 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-fly-arms {
+  animation: flyArms 1.8s ease-in-out infinite;
+  transform-origin: 120px 85px;
+}
+
+/* Mobile Phone UI Preview Mode (Exact 375px Smartphone Viewport) */
+.phone-preview-frame {
+  width: 375px !important;
+  max-width: 96vw !important;
+  height: calc(100vh - 24px) !important;
+  max-height: 750px !important;
+  min-height: 0 !important;
+  border-radius: 38px !important;
+  border: 8px solid #0e1014 !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  position: relative !important;
+  margin: 0 auto !important;
+}
+
+.phone-preview-frame .desktop-sidebar {
+  display: none !important;
+}
+
+.phone-preview-frame .mobile-top-bar,
+.phone-preview-frame .mobile-bottom-nav,
+.phone-preview-frame .mobile-status-bar {
+  display: flex !important;
+  flex-shrink: 0 !important;
+}
+
+/* Unified scrollable area inside Phone UI */
+.phone-preview-frame > main {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding: 12px !important;
+  gap: 12px !important;
+}
+
+.phone-preview-frame > .xl\:flex-row {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  flex-direction: column !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.phone-preview-frame > .xl\:flex-row > main {
+  flex: 0 0 auto !important;
+  overflow: visible !important;
+  padding: 12px !important;
+  gap: 12px !important;
+}
+
+.phone-preview-frame > .xl\:flex-row > aside {
+  width: 100% !important;
+  flex: 0 0 auto !important;
+  padding: 14px !important;
+  border-left: none !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+.phone-preview-frame .lg\:flex-row,
+.phone-preview-frame .md\:flex-row {
+  flex-direction: column !important;
+}
+
+.phone-preview-frame .md\:w-\[50\%\],
+.phone-preview-frame .xl\:w-\[320px\],
+.phone-preview-frame .xl\:w-\[300px\] {
+  width: 100% !important;
+}
+
+/* Compact Mobile Cards & Typography */
+.phone-preview-frame .clean-card {
+  padding: 13px !important;
+  border-radius: 16px !important;
+}
+
+.phone-preview-frame h1 {
+  font-size: 16.5px !important;
+  line-height: 1.25 !important;
+}
+
+.phone-preview-frame h2 {
+  font-size: 14.5px !important;
+  line-height: 1.25 !important;
+}
+
+.phone-preview-frame h3 {
+  font-size: 13.5px !important;
+}
+
+/* 2x2 Grid for Top KPI Cards on Phone */
+.phone-preview-frame .md\:grid-cols-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+}
+
+/* Single Column Stack for Main Sections on Phone */
+.phone-preview-frame .lg\:grid-cols-12,
+.phone-preview-frame .xl\:grid-cols-12,
+.phone-preview-frame .lg\:grid-cols-2,
+.phone-preview-frame .md\:grid-cols-3,
+.phone-preview-frame .xl\:grid-cols-4,
+.phone-preview-frame .lg\:grid-cols-4,
+.phone-preview-frame .sm\:grid-cols-2,
+.phone-preview-frame .sm\:grid-cols-3 {
+  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+/* 2x2 Grid for Quick Test BMI Buttons on Phone */
+.phone-preview-frame .sm\:grid-cols-4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+}
+
+.phone-preview-frame .lg\:col-span-7,
+.phone-preview-frame .lg\:col-span-5,
+.phone-preview-frame .lg\:col-span-4,
+.phone-preview-frame .xl\:col-span-4,
+.phone-preview-frame .xl\:col-span-5,
+.phone-preview-frame .xl\:col-span-7,
+.phone-preview-frame .xl\:col-span-8,
+.phone-preview-frame .xl\:col-span-12 {
+  grid-column: span 1 / span 1 !important;
+}
+
+/* Compact 7-Day Calendar Strip inside Phone UI */
+.phone-preview-frame .h-\[120px\] {
+  height: 68px !important;
+  padding: 6px 2px !important;
+  border-radius: 12px !important;
+}
+
+/* Scrollable tables inside Phone UI */
+.phone-preview-frame table {
+  display: block !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+}
+
+
